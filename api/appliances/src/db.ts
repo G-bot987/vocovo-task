@@ -8,7 +8,14 @@ function randomDate(start: Date, end: Date) {
 
 const types = ['Set top box', 'Lightbulb', 'Smoke detector']
 
-const appliances = []
+interface appliance {
+  name: string
+  id: number
+  type: string
+  createdAt: Date
+}
+
+let appliances: appliance[] = []
 
 for (let i = 0; i < 100; i++) {
   appliances.push({
@@ -18,5 +25,20 @@ for (let i = 0; i < 100; i++) {
     createdAt: randomDate(new Date(2022, 0, 1), new Date(2022, 0, 30)),
   })
 }
+
+export const deleteById = (applianceId: string) => {
+  appliances = appliances.filter(({ id }) => id !== parseInt(applianceId))
+  console.log('appliances del ', appliances)
+}
+
+export const lightBulbData = () =>
+  appliances.filter((appliance) => appliance.type === 'Lightbulb')
+
+export const setTopBoxData = () =>
+  appliances.filter((appliance) => appliance.type === 'Set top box')
+
+export const smokeDetectorData = () =>
+  appliances.filter((appliance) => appliance.type === 'Smoke detector')
+export const getAllAppliances = () => appliances
 
 export default appliances
