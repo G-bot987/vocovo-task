@@ -4,7 +4,7 @@ import ApplianceList from './list/ApplianceList'
 export default function Settopbox() {
   const [data, setData] = useState({})
   useEffect(() => {
-    fetch('/lightbulb')
+    fetch('/set-top-box')
       .then((res) => res.json())
       .then((data) => {
         setData(data)
