@@ -14,7 +14,7 @@ export default function Appliances() {
     <div>
       {data.message &&
         data.message.map((appliance) => (
-          <div>
+          <div key={appliance.id}>
             <ApplianceList appliance={appliance} />
           </div>
         ))}

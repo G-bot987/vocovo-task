@@ -7,7 +7,6 @@ import Smokedetector from './components/maintabs/Smokedetector'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Appliances')
-  // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
   const renderPage = () => {
     if (currentPage === 'Settopbox') {
       return <Settopbox />
@@ -16,7 +15,6 @@ function App() {
       return <Lighbulb />
     }
     if (currentPage === 'Smokedetector') {
-      // cv is returned through navtabs
       return <Smokedetector />
     }
     return <Appliances />
