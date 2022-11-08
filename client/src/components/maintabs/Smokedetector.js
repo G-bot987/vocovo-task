@@ -12,9 +12,10 @@ export default function Smokedetector() {
   }, [])
   return (
     <div>
+      {!data.message && <p>loading</p>}
       {data.message &&
         data.message.map((appliance) => (
-          <div>
+          <div  key={appliance.id}>
             <ApplianceList appliance={appliance} />
           </div>
         ))}

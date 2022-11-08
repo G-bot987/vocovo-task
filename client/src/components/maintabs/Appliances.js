@@ -12,6 +12,7 @@ export default function Appliances() {
   }, [])
   return (
     <div>
+      {!data.message && <p>loading</p>}
       {data.message &&
         data.message.map((appliance) => (
           <div key={appliance.id}>
