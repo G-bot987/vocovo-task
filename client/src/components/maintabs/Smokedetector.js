@@ -8,7 +8,6 @@ export default function Smokedetector() {
       .then((res) => res.json())
       .then((data) => {
         setData(data)
-        console.log(data)
       })
   }, [])
   return (
